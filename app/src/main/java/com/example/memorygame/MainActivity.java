@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+        // assign integer-arraylist to drawables
         ArrayList<Integer> figuresArray = new ArrayList<>();
         figuresArray.add(R.drawable.apple_01_300px);
         figuresArray.add(R.drawable.pear_01_300px);
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         figuresArray.add(R.drawable.orange_02_300px);
         figuresArray.add(R.drawable.lemon_01_300px);
         figuresArray.add(R.drawable.cabbage_01_300px);
-        // shuffle the cards
+        // shuffle the card figures and associate to the cards (imageviews)
         int figuresArrayLength = figuresArray.size();
         int random = (int) (Math.random() * figuresArrayLength);
         x1y1.setImageResource(figuresArray.get(random));
