@@ -1,6 +1,7 @@
 package com.example.memorygame;
 
 import android.graphics.drawable.Drawable;
+import android.hardware.display.DisplayManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //todo: fullscreen
         setContentView(R.layout.activity_main);
 
         final ImageView x1y1 = (ImageView) findViewById(R.id.x1y1);
@@ -68,16 +70,84 @@ public class MainActivity extends AppCompatActivity {
         figuresArray.add(R.drawable.orange_02_300px);
         figuresArray.add(R.drawable.lemon_01_300px);
         figuresArray.add(R.drawable.cabbage_01_300px);
+
+
         // shuffle the card figures and associate to the cards (imageviews)
         int figuresArrayLength = figuresArray.size();
-        int random = (int) (Math.random() * figuresArrayLength);
-        x1y1.setImageResource(figuresArray.get(random));
+        int random = (int) (Math.random() * figuresArrayLength);    // select a random figure
+        x1y1.setImageResource(figuresArray.get(random));            // assign the selected figure to the card
+        figuresArray.remove(random);                                // remove the selected figure from list
+        System.out.println(figuresArrayLength);
+
+        figuresArrayLength = figuresArray.size();
+        random = (int) (Math.random() * figuresArrayLength);
+        x2y1.setImageResource(figuresArray.get(random));
         figuresArray.remove(random);
+        System.out.println(figuresArrayLength);
 
+        figuresArrayLength = figuresArray.size();
+        random = (int) (Math.random() * figuresArrayLength);
+        x3y1.setImageResource(figuresArray.get(random));
+        figuresArray.remove(random);
+        System.out.println(figuresArrayLength);
 
+        figuresArrayLength = figuresArray.size();
+        random = (int) (Math.random() * figuresArrayLength);
+        x1y2.setImageResource(figuresArray.get(random));
+        figuresArray.remove(random);
+        System.out.println(figuresArrayLength);
 
-        // assign the randomized figures to the cards
+        figuresArrayLength = figuresArray.size();
+        random = (int) (Math.random() * figuresArrayLength);
+        x2y2.setImageResource(figuresArray.get(random));
+        figuresArray.remove(random);
+        System.out.println(figuresArrayLength);
 
+        figuresArrayLength = figuresArray.size();
+        random = (int) (Math.random() * figuresArrayLength);
+        x3y2.setImageResource(figuresArray.get(random));
+        // upload the arrays with the second instance of figures
+        figuresArray.add(R.drawable.apple_01_300px);
+        figuresArray.add(R.drawable.pear_01_300px);
+        figuresArray.add(R.drawable.cherry_01_300px);
+        figuresArray.add(R.drawable.orange_02_300px);
+        figuresArray.add(R.drawable.lemon_01_300px);
+        figuresArray.add(R.drawable.cabbage_01_300px);
+        System.out.println(figuresArrayLength);
+        // do the same for second time
+        figuresArrayLength = figuresArray.size();
+        random = (int) (Math.random() * figuresArrayLength);        // select a random figure
+        x1y3.setImageResource(figuresArray.get(random));            // assign the selected figure to the card
+        figuresArray.remove(random);                                // remove the selected figure from list
+        System.out.println(figuresArrayLength);
+
+        figuresArrayLength = figuresArray.size();
+        random = (int) (Math.random() * figuresArrayLength);
+        x2y3.setImageResource(figuresArray.get(random));
+        figuresArray.remove(random);
+        System.out.println(figuresArrayLength);
+
+        figuresArrayLength = figuresArray.size();
+        random = (int) (Math.random() * figuresArrayLength);
+        x3y3.setImageResource(figuresArray.get(random));
+        figuresArray.remove(random);
+        System.out.println(figuresArrayLength);
+
+        figuresArrayLength = figuresArray.size();
+        random = (int) (Math.random() * figuresArrayLength);
+        x1y4.setImageResource(figuresArray.get(random));
+        figuresArray.remove(random);
+        System.out.println(figuresArrayLength);
+
+        figuresArrayLength = figuresArray.size();
+        random = (int) (Math.random() * figuresArrayLength);
+        x2y4.setImageResource(figuresArray.get(random));
+        figuresArray.remove(random);
+        System.out.println(figuresArrayLength);
+
+        figuresArrayLength = figuresArray.size();
+        random = (int) (Math.random() * figuresArrayLength);
+        x3y4.setImageResource(figuresArray.get(random));
 
     }
 
